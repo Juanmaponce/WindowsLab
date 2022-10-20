@@ -21,6 +21,23 @@ namespace WindowsLab
         {
             int edad = Convert.ToInt32(txtEdad.Text);
 
+            if (edad <= 0)
+            {
+                MessageBox.Show("ERROR");
+            }
+            else if (edad < 18)
+            {
+                MessageBox.Show("Usted es menor de edad");
+            }
+            else if (edad >= 18 && edad < 60)
+            {
+                MessageBox.Show("Usted es mayor de edad");
+            }
+            else if (edad >= 60)
+            {
+                MessageBox.Show("Usted es adulto mayor");
+            }
+
         }
     }
 }
