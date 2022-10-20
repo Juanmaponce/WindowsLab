@@ -22,13 +22,20 @@ namespace WindowsLab
             string name = txtNombre.Text;
             string rol = txtRol.Text;
             string sex = txtSexo.Text;
-            if (ValidarSexo(sex) && ValidarSexo(rol))
+            if (ValidarSexo(sex) && ValidarRol(rol))
             {
-                MessageBox.Show("Nombre: " + name + "\n" + "Rol:" + rol + "\n" + "Sexo" + sex);
+                MessageBox.Show("Nombre: " + name + "\n" + "Rol: " + rol + "\n" + "Sexo: " + sex);
             }
             else
             {
-                MessageBox.Show("Sexo o Rol invalido");
+                if (!ValidarSexo(sex))
+                {
+                    MessageBox.Show("Sexo invalido");
+                }
+                else
+                {
+                    MessageBox.Show("Rol invalido");
+                }
             }
             
         }
